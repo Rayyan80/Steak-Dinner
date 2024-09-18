@@ -47,6 +47,7 @@ def plate(pen): # PLATE FUNCTION #
     pen.end_fill()
 
 def steak(pen, steakRareity):   # STEAK FUNCTION #
+
     pen.penup()
     pen.width(30)
     pen.color("#543421")
@@ -73,7 +74,7 @@ def steak(pen, steakRareity):   # STEAK FUNCTION #
     pen.end_fill()
 
     pen.penup()
-    pen.setposition(-400, -236)
+    pen.setposition(-380, -236)
     pen.color("#d9c9ab")
     pen.pendown()
 
@@ -84,9 +85,50 @@ def steak(pen, steakRareity):   # STEAK FUNCTION #
     pen.left(90)
     pen.forward(120)
 
+def chimichurri(pen):
+    pen.penup()
+    pen.setposition(-378, -116)
+    pen.color("#0f4d1a")
+    pen.fillcolor("#0f4d1a")
+    pen.setheading(-90)
+    pen.pendown()
+    pen.begin_fill()
 
+    # First shape
+    x = 1
+    while x < 20:
+        pen.forward(5)
+        pen.left(10)
+        x += 1
+
+    # Second shape
+    pen.setheading(-90)
+    y = 1
+    while y < 25:
+        pen.forward(7)
+        pen.left(8)
+        y += 1
+
+    # Third shape
+    pen.setheading(-90)
+    z = 1
+    while z < 20:
+        pen.forward(6.5)
+        pen.left(10)
+        z += 1
+
+    pen.setheading(180)
+    pen.setposition(-378, -116)
+    pen.end_fill()  # End fill after all shapes are drawn
+
+chimi = input("Do you want Chimichurri (Steak Sauce)? [y/n]")
 steak(pen, steakRareity)
+
+if(chimi == "y"):
+    chimichurri(pen)
+
 plate(pen)
+
 #--------------DRAW TO SCREEN--------------#
 pen.hideturtle()
 wn.mainloop()
