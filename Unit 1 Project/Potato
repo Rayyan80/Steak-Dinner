@@ -1,0 +1,12 @@
+import turtle as trtl
+
+trtl.bgcolor("white")
+trtl.shape("circle")
+trtl.fillcolor("goldenrod")
+trtl.shapesize(10,15,5) # (length, width, outline)
+trtl.pencolor("chocolate")
+
+
+
+trtl.Screen()
+trtl.mainloop()
